@@ -1,0 +1,7 @@
+git
+xorg-server
+musl-dev
+btrfs-progs-dev
+libc-dev
+linux-headers
+make
