@@ -12,5 +12,8 @@ i3:
 i3-docker:
 	./run.sh $(RUN_PARAM) -n i3-docker -- base docker i3 xserver
 
+i3-docker-cached:
+	./run.sh $(RUN_PARAM) -n i3-docker-cached -- base docker i3 xserver docker-image-cache
+
 clean:
 	rm -f builds/*

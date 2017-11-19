@@ -1,0 +1,5 @@
+org: wiin
+image: docker-image-cache
+disable-content-trust: true
+arches:
+  - amd64
