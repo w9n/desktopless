@@ -13,10 +13,6 @@ services:
     image: linuxkit/rngd:842e5e8ece7934f0cab9fd0027b595ff3471e5b9
   - name: dhcpcd
     image: linuxkit/dhcpcd:48831507404049660b960e4055f544917d90378e
-  - name: xorg
-    image: wiin/xorg:11b2433dbcb1a7306abf6f41703a6bbf1205c77b
-  - name: i3
-    image: wiin/i3:b232c32e89830601bb9f51fd167ccc92a52c8a07
 trust:
   org:
     - linuxkit
