@@ -4,6 +4,7 @@ CMD []
 WORKDIR /
 
 RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositories
+COPY --from=docker:17.10.0-ce /usr/local/bin/docker /usr/local/bin/docker
 
 RUN apk update
 RUN apk add  \
