@@ -1,6 +1,7 @@
 #!/bin/sh
 run=false
 name=build
+skip_build=false
 
 __ScriptVersion="0.1"
 function usage ()
@@ -20,7 +21,7 @@ do
   case $opt in
 	n|name     )  name=$OPTARG ;;
 	r|run      )  run=true ;;
-	s|skip     )  skip=true ;;
+	s|skip     )  skip_build=true ;;
 	h|help     )  usage; exit 0   ;;
 	v|version  )  echo "$0 -- Version $__ScriptVersion"; exit 0   ;;
 	* )  echo -e "\n  Option does not exist : $OPTARG\n"
@@ -33,18 +34,18 @@ shift $(($OPTIND-1))
 function build() {
 	for var in "$@"
 	do
-		param="$param $var.yml"
+		moby_configs="$moby_configs yml/$var.yml"
 	done
 	
-	moby build ${MOBY_PARAMTER} -format iso-bios -name $name $param 
+	echo $moby_configs
+	moby build -format iso-bios -name builds/$name $moby_configs 
 }
 
 [[ "$#" -eq 0 ]] && exit 0
 
 #fix until virt-viewer is repaired
 virt-manager
-
-[[ ! skip = true ]] build
+[[  $skip_build = false ]] && build $@ || echo "skip build"
 
 while [[ ! -f /var/run/libvirtd.pid ]]; do
 	sleep 1000
