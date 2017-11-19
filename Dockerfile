@@ -23,7 +23,7 @@ RUN apk add --update \
 
 COPY ./scripts /usr/bin
 
-WORKDIR /workdir/yml
+WORKDIR /workdir
 
 ENTRYPOINT ["init.sh"]
 CMD [""]
