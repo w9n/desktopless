@@ -3,7 +3,8 @@ RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk update
 RUN apk add --initdb --no-cache --root /out \
 	alpine-baselayout \
-    xorg-server \
+    	xorg-server \
+	xf86-video-intel \
 	xf86-input-mouse \
 	xf86-input-keyboard \
 	xf86-input-libinput \
