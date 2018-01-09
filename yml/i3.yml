@@ -1,6 +1,6 @@
 services:
   - name: i3
-    image: wiin/i3:fa307c584e4c1b14c3dd3c16c0316fe729755c04
+    image: wiin/i3:<latest>
 trust:
   org:
     - wiin

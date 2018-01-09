@@ -1,6 +1,6 @@
 services:
   - name: xorg
-    image: wiin/xorg:11b2433dbcb1a7306abf6f41703a6bbf1205c77b
+    image: wiin/xorg:<latest>
 trust:
   org:
     - wiin
