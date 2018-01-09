@@ -1,19 +1,20 @@
-RUN_PARAM?=-r
-
 default:
-	./run.sh -s
+	./run.sh
 
 image:
 	docker build . --tag=wiin/desktopless
 
 i3:
-	./run.sh $(RUN_PARAM) -n i3-simple -- base i3 xserver
+	./run.sh init.sh --build --libvirt --name i3-simple yml/base.yml yml/i3 yml/xserver.yml
 
 i3-docker:
-	./run.sh $(RUN_PARAM) -n i3-docker -- base docker i3 xserver
+	./run.sh init.sh --build --libvirt --name i3-docker yml/base.yml yml/docker.yml yml/i3.yml yml/xserver.yml
 
 i3-docker-cached:
-	./run.sh $(RUN_PARAM) -n i3-docker-cached -- base docker i3 xserver docker-image-cache
+	./run.sh init.sh --build --libvirt --name i3-docker-cached yml/base.yml yml/docker.yml yml/i3.yml yml/xserver.yml yml/docker-image-cache.yml
 
 clean:
-	rm -f builds/*
+	rm -rf builds/*
+
+xhost:
+	xhost +local:root
