@@ -1,0 +1,12 @@
+org: wiin
+image: docker-image-cache
+disable-content-trust: true
+arches:
+  - amd64
+config:
+  binds:
+    - /var/run:/var/run
+depends:
+  docker-images:
+    target-dir: dl
+    from-file: images.lst
