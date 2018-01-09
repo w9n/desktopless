@@ -1,2 +1,14 @@
 image: i3
 org: wiin
+config:
+  binds:
+    - /tmp:/tmp:rshared,rbind
+    - /run:/run
+    - /etc/resolv.conf:/etc/resolv.conf
+    - /etc:/hostroot/etc
+    - /usr/bin/ctr:/usr/bin/ctr
+    - /usr/bin/runc:/usr/bin/runc
+    - /containers:/containers
+    - /var/log:/var/log
+  capabilities:
+    - all

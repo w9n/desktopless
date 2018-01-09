@@ -1,2 +1,10 @@
 image: xorg
 org: wiin
+config:
+  binds:
+    - /tmp:/tmp:rshared,rbind
+    - /dev:/dev:rshared,rbind
+    - /sys:/sys:rshared,rbind
+    - /lib/modules:/lib/modules:rshared,rbind
+  capabilities:
+    - all

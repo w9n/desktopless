@@ -56,4 +56,3 @@ COPY --from=fetcher /images /images
 COPY import-images.sh /usr/bin/import-images.sh
 CMD [ "import-images.sh" ]
 
-LABEL org.mobyproject.config='{"binds": ["/var/run:/var/run"]}'

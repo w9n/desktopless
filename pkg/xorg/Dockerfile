@@ -23,16 +23,3 @@ COPY --from=mirror /out/ /
 COPY xorg.conf /etc/X11/xorg.conf
 CMD ["sh", "-c", "udevd -d && udevadm trigger && X || sleep 100000"]
 ENV DISPLAY :0.0
-
-LABEL org.mobyproject.config=' \
-{ \
-  "binds": [ \
-    "/tmp:/tmp:rshared,rbind", \
-    "/dev:/dev:rshared,rbind", \
-    "/sys:/sys:rshared,rbind" \
-  ], \
-  "capabilities": [ \
-    "all" \
-  ] \
-} \
-'
