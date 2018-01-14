@@ -79,44 +79,7 @@ NOTARY_CMD="notary -s https://notary.docker.io -d $HOME/.docker/trust addhash \
              -p docker.io/"$ORG"/"$IMAGE" $TAG $LEN --sha256 $SHA256 \
              -r targets/releases"
 
-echo '
-spawn '"$NOTARY_CMD"'
-set pid [exp_pid]
-set timeout 60
-expect {
-    timeout {
-        puts "Expected username prompt"
-        exec kill -9 $pid
-        exit 1
-    }
-    "username: " {
-        send "'"$USER"'\n"
-    }
-}
-expect {
-    timeout {
-        puts "Expected password prompt"
-        exec kill -9 $pid
-        exit 1
-    }
-    "password: " {
-        send "'"$PASS"'\n"
-    }
-}
-expect {
-    timeout {
-        puts "Expected password prompt"
-        exec kill -9 $pid
-        exit 1
-    }
-    eof {
-    }
-}
-set waitval [wait -i $spawn_id]
-set exval [lindex $waitval 3]
-exit $exval
-' | expect -f -
-
+$NOTARY_CMD
 echo
 echo "New signed multi-arch image: $REPO:$TAG"
 echo

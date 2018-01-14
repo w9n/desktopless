@@ -49,3 +49,4 @@ build: hash iid versions.$(ARCH)
 
 clean:
 	rm -f hash iid
+
