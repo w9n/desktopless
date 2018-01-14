@@ -1,1 +1,2 @@
-image: linux-firmware
+image: firmware
+org: wiin

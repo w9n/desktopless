@@ -1,23 +1,38 @@
 kernel:
-  image: linuxkit/kernel:4.9.61
+  #image: wiin/kernel-ubuntu:4.14.0-16.19
+  #image: linuxkit/kernel:4.9.61
   #image: linuxkit/kernel:4.14.12-1398367febdd691286cf335475e279880713ab88-dirty-amd64
+  #image: foobar/kernel-fedora:4.13.9-300.fc27
+  image: foobar/kernel-debian:4.14.7-1
   cmdline: "console=tty0 console=ttyS0 console=ttyAMA0"
 init:
   - linuxkit/init:<latest>
+  - wiin/firmware:<latest>
   - linuxkit/runc:<latest>
   - linuxkit/containerd:<latest>
+  - linuxkit/ca-certificates:<latest>
   - linuxkit/getty:<latest>
 onboot:
   - name: sysctl
     image: linuxkit/sysctl:<latest>
   - name: sysfs
     image: linuxkit/sysfs:<latest>
+  - name: modprobe
+    image: linuxkit/modprobe:<latest>
+    command: ["modprobe", "ext4"]
   - name: format
     image: linuxkit/format:<latest>
   - name: mounts
     image: linuxkit/mount:<latest>
     command: ["/usr/bin/mountie", "/var/lib/"]
+    pid: host
+    net: host
 services:
+  - name: mounts
+    image: linuxkit/mount:<latest>
+    command: ["sh", "-c","sleep 1099999999999999"]
+    pid: host
+    net: host
   - name: rngd
     image: linuxkit/rngd:<latest>
   - name: dhcpcd

@@ -1,4 +1,4 @@
-FROM alpine:3.7 AS mirror
+FROM alpine:edge AS mirror
 
 # update base image
 RUN apk update && apk upgrade -a
@@ -8,12 +8,12 @@ COPY Dockerfile /Dockerfile
 COPY packages* /tmp/
 
 # mirror packages
-RUN cat /tmp/packages.$(uname -m) >> /tmp/packages && \
-   mkdir -p /mirror/$(uname -m) && \
-   apk fetch --recursive -o /mirror/$(uname -m) $(apk info; cat /tmp/packages)
+run cat /tmp/packages.$(uname -m) >> /tmp/packages && \
+    mkdir -p /mirror/$(uname -m) && \
+    apk fetch --recursive -o /mirror/$(uname -m) $(apk info; cat /tmp/packages)
 
-# add the tools for WireGuard, since the kernel module is now included, but from edge/testing
-RUN apk fetch --recursive -o /mirror/$(uname -m) -X http://dl-cdn.alpinelinux.org/alpine/edge/testing -U wireguard-tools
+#test packages
+RUN apk fetch --recursive -o /mirror/$(uname -m) -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --no-cache $(apk info; cat /tmp/packages.testing)
 
 # install abuild for signing
 RUN apk add --no-cache abuild

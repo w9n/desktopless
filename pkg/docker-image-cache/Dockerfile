@@ -1,4 +1,4 @@
-FROM wiin/alpine:a11160c2f0b6073de16092604664c37dbfc688a9 AS build
+FROM wiin/alpine: AS build
 
 RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk add --no-cache --initdb -p /out \
