@@ -1,0 +1,6 @@
+services:
+  - name: X-intel
+    image: wiin/X-intel:<latest>
+trust:
+  org:
+    - wiin
