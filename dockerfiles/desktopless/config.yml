@@ -1,0 +1,9 @@
+repos:
+  - path: /pkgs/linuxkit/pkg
+    org: linuxkit
+  - path: /pkgs/kubernetes/pkg
+    org: linuxkit
+  - path: /workdir/pkg
+    org: wiin
+  - path: /pkgs/desktopless/pkg
+    org: wiin
