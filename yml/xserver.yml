@@ -1,6 +1,0 @@
-services:
-  - name: xorg
-    image: wiin/xorg:<latest>
-trust:
-  org:
-    - wiin
