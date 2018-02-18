@@ -1,4 +1,4 @@
-FROM wiin/alpine:bc5267ce49cff4b043bac3a18ee5cf20e7a8497c-amd64 AS build
+FROM wiin/alpine:latest as build
 ENTRYPOINT []
 CMD []
 WORKDIR /
@@ -13,7 +13,7 @@ RUN apk add --no-cache --initdb -p /out \
 
 RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
 
-FROM wiin/alpine:bc5267ce49cff4b043bac3a18ee5cf20e7a8497c-amd64 AS docker
+FROM wiin/alpine:latest as docker
 RUN apk add --no-cache \
 	docker
 

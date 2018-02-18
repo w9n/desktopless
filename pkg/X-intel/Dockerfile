@@ -1,4 +1,4 @@
-FROM wiin/alpine:fa34f1a61809c7dea2ccd068e14527d4d2935ba0-amd64 AS mirror
+FROM wiin/alpine:latest AS mirror
 
 RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk add --initdb --no-cache --root /out \

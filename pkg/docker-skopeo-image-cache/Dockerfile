@@ -1,4 +1,4 @@
-FROM wiin/alpine:bc5267ce49cff4b043bac3a18ee5cf20e7a8497c-amd64 AS mirror
+FROM wiin/alpine:latest AS mirror
 
 RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk update
@@ -12,7 +12,7 @@ RUN apk add --initdb --no-cache --root /out \
 # Remove apk residuals
 RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
 
-FROM wiin/alpine:bc5267ce49cff4b043bac3a18ee5cf20e7a8497c-amd64 AS skopeo
+FROM wiin/alpine:latest AS skopeo
 
 RUN apk add --no-cache \
     bash \
