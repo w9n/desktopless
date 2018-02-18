@@ -1,0 +1,6 @@
+services:
+  - name: docker-skopeo-image-cache
+    image: wiin/docker-skopeo-image-cache:<latest>
+trust:
+  org:
+    - wiin
