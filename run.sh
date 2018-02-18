@@ -1,20 +1,32 @@
 #!/bin/bash
 
+: ${BUILD:=true}
 : ${DOCKER_REPO_PREFIX:=wiin}
+: ${DOCKER_TAG:=latest}
+: ${DEV:=true}
+: ${REMOTE_VIEWER:=true}
+
+: ${NETWORK_NAME:=deskopless}
+: ${NETWORK_SUBNET:=10.10.10.1/24}
+docker network create --subnet $NETWORK_SUBNET $NETWORK_NAME
+
+: ${DESKTOPLESS_IP:=10.10.10.10}
+: ${DESKTOPLESS_PORT:=5930}
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-## not tested yet
-#--link pulseaudio:pulseaudio \
-#-e PULSE_SERVER=pulseaudio \
-#--group-add audio \
-docker run  -it --rm  \
-	-v /etc/localtime:/etc/localtime:ro \
-	-v /tmp/.X11-unix:/tmp/.X11-unix \
-	-v /var/run/docker.sock:/var/run/docker.sock \
-	-v /${DIR}:/workdir \
-	-e "DISPLAY=unix${DISPLAY}" \
-	--name desktopless \
-	--privileged \
-	${DOCKER_REPO_PREFIX}/desktopless \
-	$@
+xhost +local:root
+
+[ ! -z "$BUILD" ] && {
+    $DIR/build.sh
+}
+
+[ ! -z "$REMOTE_VIEWER" ] && {
+    . ./dockerfiles/remote-viewer/run.sh \
+    --host $DESKTOPLESS_IP \
+    --port $DESKTOPLESS_PORT \
+    --protocol spice
+
+}&
+
+. ./dockerfiles/desktopless/run.sh $@
