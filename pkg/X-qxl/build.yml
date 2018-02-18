@@ -1,4 +1,4 @@
-image: xorg-qxl
+image: x-qxl
 org: wiin
 config:
   binds:

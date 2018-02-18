@@ -1,4 +1,4 @@
-image: xorg-intel
+image: x-intel
 org: wiin
 config:
   binds:
