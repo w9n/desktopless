@@ -1,5 +1,8 @@
 #!/bin/sh
 
+while [ ! -S /var/run/docker.sock ] ; do
+   sleep 1
+done
 path=/images/
 #deepest dirs
 for image_dir in $(find $path -type d -links 2)
