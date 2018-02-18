@@ -1,0 +1,6 @@
+kernel:
+  image: linuxkit/kernel:4.9.61
+  cmdline: "console=tty0 console=ttyS0 console=ttyAMA0"
+trust:
+  org:
+    - linuxkit
