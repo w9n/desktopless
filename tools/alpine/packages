@@ -9,7 +9,6 @@ cairo
 cairo-dev
 check-dev
 clang
-dbus
 device-mapper 
 docker
 docker

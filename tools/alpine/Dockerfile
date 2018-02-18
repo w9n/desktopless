@@ -7,11 +7,14 @@ RUN apk update && apk upgrade -a
 COPY Dockerfile /Dockerfile
 COPY packages* /tmp/
 
+run mkdir -p /mirror/$(uname -m)
+
+# cuz its flagged
 # mirror packages
 run cat /tmp/packages.$(uname -m) >> /tmp/packages && \
-    mkdir -p /mirror/$(uname -m) && \
     apk fetch --recursive -o /mirror/$(uname -m) $(apk info; cat /tmp/packages)
 
+RUN apk fetch --recursive -o /mirror/$(uname -m) -X http://dl-cdn.alpinelinux.org/alpine/v3.7/main --no-cache $(apk info;echo dbus)
 #test packages
 RUN apk fetch --recursive -o /mirror/$(uname -m) -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --no-cache $(apk info; cat /tmp/packages.testing)
 
