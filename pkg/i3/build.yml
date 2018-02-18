@@ -9,6 +9,7 @@ config:
     - /usr/bin/ctr:/usr/bin/ctr
     - /usr/bin/runc:/usr/bin/runc
     - /containers:/containers
+    - /var/run:/var/run
     - /var/log:/var/log
   capabilities:
     - all

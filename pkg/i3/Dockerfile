@@ -6,6 +6,7 @@ RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk add --no-cache --initdb -p /out \
 	i3wm \
 	git \
+	libltdl \
 	xorg-server \
 	xkeyboard-config \
 	i3status \
