@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mkdir images
+rm -r dl/*
 for image in $(cat image.list)
 do
 	echo $image

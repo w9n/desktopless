@@ -46,9 +46,7 @@ COPY --from=mirror /out/ /
 WORKDIR /workdir
 COPY --from=skopeo /usr/bin/skopeo /usr/bin/skopeo
 
-COPY image.list image.list
-COPY download-images.sh download-images.sh
-RUN ./download-images.sh
+COPY dl dl
 
 
 FROM scratch
