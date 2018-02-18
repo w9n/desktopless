@@ -1,5 +1,2 @@
-docker.io/wiin/rofi:214911952e0e61844e474eeb236a5a4d377e1a80-dirty
 docker.io/alpine:latest
-docker.io/wiin/desktopless:latest
-docker.io/jess/chrome:latest
-
+wiin/desktopless:latest
