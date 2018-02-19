@@ -34,7 +34,7 @@ RUN apk add --no-cache \
 
 ENV GOPATH /go
 WORKDIR /go/src/github.com/projectatomic/skopeo
-COPY skopeo ./
+RUN git clone https://github.com/projectatomic/skopeo ./
 RUN make binary-local
 RUN cp ./skopeo /usr/bin/skopeo
 

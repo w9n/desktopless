@@ -16,4 +16,4 @@ linuxkit pkg build -disable-content-trust ./pkg/X-intel
 echo " build x-qxl"
 linuxkit pkg build -disable-content-trust ./pkg/X-qxl
 echo "docker-skopeo"
-linuxkit pkg build -disable-content-trust ./pkg/docker-skopeo-image-cache
+linuxkit pkg build -disable-content-trust -network ./pkg/docker-skopeo-image-cache
