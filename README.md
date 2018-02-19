@@ -1,23 +1,47 @@
 # desktopless
-This is a proof of concept to build an immutable and composable desktop based on [moby](https://github.com/moby/tool), [linuxkit](https://github.com/linuxkit/linuxkit/) and highly inspired by the [linuxkit kubernetes project](https://github.com/linuxkit/kubernetes).
+
+desktopless, a proof of concept to build immutable and composable desktops. Based on [moby](https://github.com/moby/tool), [linuxkit](https://github.com/linuxkit/linuxkit/) and highly inspired by the [linuxkit kubernetes project](https://github.com/linuxkit/kubernetes).
 
 **NOTE:** This is far from usable in the real world.
 ## Requirments
-All you need is Docker and an unprotected X socket to get started. You might have to `xhost +local:root` on your host to allow access for the container.
+
+Only Docker is required
+
+invoke the build script from within the desktopless container to build all other container with `linuxkit` cli.
 
 ## Run
-`make` starts a container that builds and imports the system into libvirt to easily adjust the vm settings. It automatically starts virt-manager. The build progess is visible by `docker logs desktopless`.
+`run.sh`
 
-## make i3
-#### yml/base.yml
-The base system containing the most necessary containers to start other containers and do dhcp configuration for internet connectivity.
-#### yml/xserver.yml
-The X server provides the socket that can be consumed by any window manager and application.
-#### yml/i3.yml
-A very nice and basic window manager.
-## make i3-docker (might get replaced with something based on containerd namespaces)
-#### yml/docker.yml
-This should be the main source of applications and pass the X Socket into containers started by the user. It should be the only stateful container (not implemented yet).
-## make i3-docker-cached
-#### yml/docker-image-cache.yml
-load offline images into docker on boot time. The available images are defined in `pkg/docker-image-cache/image.list` on its container build time.
+assembles and/or runs a named desktop in a container.
+
+`dd if=./builds/some.iso of=/dev/sdxX`
+
+Create a bootable usb-stick
+
+## Examples
+
+`./run.sh -b -r yml/kernel-lkt.yml yml/base.yml X-qxl.yml`
+
+minimal X setup for virtualization on qemu/spice
+
+`./run.sh -b yml/kernel-fedora.yml yml/base.yml X-intel.yml`
+
+minimal X setup for desktops/igpus
+
+`.. yml/i3`
+
+i3, a simple tilling window manager 
+
+`.. yml/state.yml`
+
+if empty format the first attached disk, afterwords mount it.
+
+`.. yml/docker.yml`
+
+add a docker daemon
+
+`.. yml/docker-skopeo-image-cache.yml`
+
+preload the docker daemon with some images defined in `pkg/docker-skopeo-image-cache/image.list`
+
+# Happy Hacking!
