@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: ${BUILD:=true}
+: ${BUILD_CONTAINER:=}
 : ${DOCKER_REPO_PREFIX:=wiin}
 : ${DOCKER_TAG:=latest}
 : ${DEV:=true}
@@ -17,7 +17,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 xhost +local:root
 
-[ ! -z "$BUILD" ] && {
+[ ! -z "$BUILD_CONTAINER" ] && {
     $DIR/build.sh
 }
 
