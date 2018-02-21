@@ -22,11 +22,10 @@ RUN cp bin/* /go/bin/
 
 RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
 
-#we want to work here
+#FROM frolvlad/alpine-glibc
 FROM alpine:edge
 COPY --from=deps /go/bin /usr/bin
 
-#COPY hack/linuxkit /usr/bin/linuxkit
 
 RUN apk add --update \
 	docker \
@@ -44,6 +43,8 @@ COPY ./init.sh /usr/bin
 COPY ./config.yml /root/.moby/linuxkit/config.yml
 
 WORKDIR /workdir
+
+#COPY hack/linuxkit /usr/bin/linuxkit
 
 ENTRYPOINT ["init.sh"]
 CMD ["sh"]
