@@ -61,8 +61,9 @@ err() {
         linuxkit run qemu \
             -cpus 3 \
             -mem 4000 \
+            -gui \
             -disk size=20G \
-            -graphic \
+            -param "-vga qxl -spice port=5930,disable-ticketing -device virtio-serial-pci -device virtserialport,chardev=spicechannel0,name=com.redhat.spice.0 -chardev spicevmc,id=spicechannel0,name=vdagent -usb -usbdevice tablet"\
             builds/$name.iso > linuxkit.log
     }
 }&
