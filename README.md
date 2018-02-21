@@ -2,12 +2,13 @@
 
 desktopless, a proof of concept to build immutable and composable desktops. Based on [moby](https://github.com/moby/tool), [linuxkit](https://github.com/linuxkit/linuxkit/) and highly inspired by the [linuxkit kubernetes project](https://github.com/linuxkit/kubernetes).
 
-**NOTE:** This is far from usable in the real world.
 ## Requirments
 
 Only Docker is required
 
 invoke the build script from within the desktopless container to build all other container with `linuxkit` cli.
+
+**NOTE:** The build an run process currently use a [custom linuxkit](https://github.com/w9n/linuxkit) cli inside.
 
 ## Run
 `run.sh`
