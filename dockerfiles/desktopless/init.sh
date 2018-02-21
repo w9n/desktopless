@@ -47,8 +47,6 @@ err() {
     exit 1
 } 
 
-[ -z $moby_configs ] || [ -z $run ] && err
-
 {
     [ $build == "true" ] && {
         echo "building $name..."
