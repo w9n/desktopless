@@ -21,11 +21,11 @@ Create a bootable usb-stick
 
 ## Examples
 
-`./run.sh -b -r yml/kernel-lkt.yml yml/base.yml X-qxl.yml`
+`./run.sh -b -r yml/kernel-lkt.yml yml/base.yml yml/X-qxl.yml`
 
 minimal X setup for virtualization on qemu/spice
 
-`./run.sh -b yml/kernel-fedora.yml yml/base.yml X-intel.yml`
+`./run.sh -b yml/kernel-fedora.yml yml/base.yml yml/X-intel.yml`
 
 minimal X setup for desktops/igpus
 
