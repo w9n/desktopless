@@ -36,6 +36,7 @@ linux-headers
 lvm2-dev
 make
 musl-dev
+ostree
 pango
 pango-dev
 perl
