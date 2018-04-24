@@ -20,7 +20,7 @@ DEPS += packages.aarch64
 SUFFIX=-arm64
 endif
 
-default: push
+default: build
 
 show-tag:
 	@sed -n -e '1s/# \(.*\/.*:[0-9a-f]\{40\}\)/\1/p;q' versions.$(ARCH)
