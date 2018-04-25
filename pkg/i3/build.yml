@@ -3,13 +3,12 @@ org: wiin
 config:
   binds:
     - /tmp:/tmp:rshared,rbind
-    - /run:/run
-    - /etc/resolv.conf:/etc/resolv.conf
-    - /etc:/hostroot/etc
+    - /run:/run:rshared,rbind
+    - /etc/resolv.conf:/etc/resolv.conf:rshared,rbind
+    - /etc:/hostroot/etc:rshared,rbind
     - /usr/bin/ctr:/usr/bin/ctr
     - /usr/bin/runc:/usr/bin/runc
     - /containers:/containers
-    - /var/run:/var/run
-    - /var/log:/var/log
+    - /var/log:/var/log:rshared,rbind
   capabilities:
     - all
