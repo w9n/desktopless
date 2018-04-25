@@ -10,8 +10,9 @@ services:
        options: ["rw","nosuid","noexec","nodev","relatime"]
     binds:
      - /dev:/dev
-     - /run:/run
+     - /run:/run:rshared,rbind
      - /var:/var:rshared,rbind
+     - /tmp:/tmp:rshared,rbind
      - /lib/modules:/lib/modules
      - /etc/resolv.conf:/etc/resolv.conf
     rootfsPropagation: shared
