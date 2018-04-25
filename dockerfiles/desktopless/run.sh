@@ -27,6 +27,7 @@ desktopless()
         $DEV_PARAM \
         $IP \
         $NET \
+        -v /dev:/dev \
         -v /var/run/docker.sock:/var/run/docker.sock \
         ${DOCKER_REPO_PREFIX}/desktopless:${DOCKER_TAG} \
         $@   
