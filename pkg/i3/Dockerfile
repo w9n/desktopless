@@ -4,6 +4,8 @@ CMD []
 WORKDIR /
 RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk add --no-cache --initdb -p /out \
+	alpine-baselayout \
+	apk-tools \
 	i3wm \
 	git \
 	libltdl \
@@ -12,7 +14,7 @@ RUN apk add --no-cache --initdb -p /out \
 	i3status \
 	xterm 
 
-RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
+RUN mv /out/etc/apk/repositories.upstream /out/etc/apk/repositories
 
 FROM wiin/alpine:latest as docker
 RUN apk add --no-cache \
