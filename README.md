@@ -29,7 +29,7 @@ minimal X setup for virtualization on qemu/spice
 
 minimal X setup for desktops/igpus
 
-`.. yml/i3`
+`.. yml/i3.yml`
 
 i3, a simple tilling window manager 
 
