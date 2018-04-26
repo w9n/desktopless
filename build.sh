@@ -9,6 +9,8 @@ echo "build remote-viewer"
 docker build -t $repo/remote-viewer ./dockerfiles/remote-viewer 
 echo "build i3"
 linuxkit pkg build -disable-content-trust ./pkg/i3
+echo "build sway"
+linuxkit pkg build -disable-content-trust ./pkg/sway
 echo "build linux-firmware"
 linuxkit pkg build -disable-content-trust ./pkg/linux-firmware
 echo "build x-intel"

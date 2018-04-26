@@ -33,6 +33,10 @@ minimal X setup for desktops/igpus
 
 i3, a simple tilling window manager 
 
+`.. yml/sway.yml`
+
+the wayland equivalent of i3, powered by wlroots
+
 `.. yml/state.yml`
 
 if empty format the first attached disk, afterwords mount it.

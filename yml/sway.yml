@@ -1,0 +1,6 @@
+services:
+  - name: sway
+    image: wiin/sway:<latest>
+trust:
+  org:
+    - wiin

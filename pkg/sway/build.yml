@@ -1,0 +1,18 @@
+image: sway
+org: wiin
+config:
+  binds:
+    - /tmp:/tmp:rshared,rbind
+    - /run:/run:rshared,rbind
+    - /dev:/dev:rshared,rbind
+    - /etc/resolv.conf:/etc/resolv.conf:rshared,rbind
+    - /etc:/hostroot/etc:rshared,rbind
+    - /usr/bin/ctr:/usr/bin/ctr
+    - /usr/bin/runc:/usr/bin/runc
+    - /containers:/containers
+    - /var/log:/var/log:rshared,rbind
+  capabilities:
+    - all
+  runtime:
+    mkdir:
+      - /run/wayland
