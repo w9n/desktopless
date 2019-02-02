@@ -2,6 +2,8 @@
 
 desktopless, a proof of concept to build immutable and composable desktops. Based on [moby](https://github.com/moby/tool), [linuxkit](https://github.com/linuxkit/linuxkit/) and highly inspired by the [linuxkit kubernetes project](https://github.com/linuxkit/kubernetes).
 
+![](images/desktopless.gif)
+
 ## Requirments
 
 Only Docker is required
