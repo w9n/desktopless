@@ -56,4 +56,4 @@ while ! nc -z $HOST $PORT; do
 done
 
 echo "remote-viewer $PROTOCOL://$HOST:$PORT"
-remote-viewer $PROTOCOL://$HOST:$PORT 2>/dev/null
+remote-viewer $PROTOCOL://$HOST:$PORT
