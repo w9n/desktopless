@@ -1,19 +1,19 @@
 init:
-  - linuxkit/init:<latest>
-  - linuxkit/runc:<latest>
-  - linuxkit/containerd:<latest>
-  - linuxkit/ca-certificates:<latest>
-  - linuxkit/getty:<latest>
+  - linuxkit/init:v0.6
+  - linuxkit/runc:v0.6
+  - linuxkit/containerd:v0.6
+  - linuxkit/ca-certificates:v0.6
+  - linuxkit/getty:v0.6
 onboot:
   - name: sysctl
-    image: linuxkit/sysctl:<latest>
+    image: linuxkit/sysctl:v0.6
   - name: sysfs
-    image: linuxkit/sysfs:<latest>
+    image: linuxkit/sysfs:v0.6
 services:
   - name: rngd
-    image: linuxkit/rngd:<latest>
+    image: linuxkit/rngd:v0.6
   - name: dhcpcd
-    image: linuxkit/dhcpcd:<latest>
+    image: linuxkit/dhcpcd:v0.6
 trust:
   org:
     - linuxkit

@@ -2,7 +2,7 @@ kernel:
   image: wiin/kernel-fedora:4.13.9-300.fc27
   cmdline: "console=tty0 console=ttyS0 console=ttyAMA0"
 init:
-  - wiin/firmware:<latest>
+  - linuxkit/firmware:latest
 trust:
   org:
     - wiin

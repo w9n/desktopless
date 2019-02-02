@@ -1,6 +1,6 @@
 services:
   - name: x-intel
-    image: wiin/x-intel:<latest>
+    image: wiin/x-intel:latest
 trust:
   org:
     - wiin

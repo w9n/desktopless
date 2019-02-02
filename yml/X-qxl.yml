@@ -1,6 +1,6 @@
 services:
   - name: x-qxl
-    image: wiin/x-qxl:<latest>
+    image: wiin/x-qxl:latest
 trust:
   org:
     - wiin

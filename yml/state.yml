@@ -1,11 +1,11 @@
 onboot:
   - name: modprobe
-    image: linuxkit/modprobe:<latest>
+    image: linuxkit/modprobe:v0.6
     command: ["modprobe", "ext4"]
   - name: format
-    image: linuxkit/format:<latest>
+    image: linuxkit/format:v0.6
   - name: mounts
-    image: linuxkit/mount:<latest>
+    image: linuxkit/mount:v0.6
     command: ["/usr/bin/mountie", "/var/lib/"]
 trust:
   org:

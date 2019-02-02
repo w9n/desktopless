@@ -56,7 +56,7 @@ done
     [ $build == "true" ] && {
         echo "building $name..."
         echo $moby_configs
-        linuxkit bake $moby_configs | linuxkit build -disable-content-trust -format iso-bios -name builds/$name -
+        linuxkit build -disable-content-trust -format iso-bios -name builds/$name $moby_configs
     }
 
     [ $run == "true" ] && {

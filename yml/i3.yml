@@ -1,6 +1,6 @@
 services:
   - name: i3
-    image: wiin/i3:<latest>
+    image: wiin/i3:latest
 trust:
   org:
     - wiin
