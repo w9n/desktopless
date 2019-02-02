@@ -13,12 +13,8 @@ RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
 #Run apk add --update git make build-base
 
 #hack
-RUN mkdir -p /go/src/github.com/w9n/linuxkit
-WORKDIR /go/src/github.com/w9n/linuxkit
-RUN git clone https://github.com/w9n/linuxkit ./
-RUN find ./ -type f -print0 | xargs -0 sed -i 's#github.com/linuxkit/linuxkit#github.com/w9n/linuxkit#g'
-RUN make local-build
-RUN cp bin/* /go/bin/
+RUN git clone https://github.com/w9n/linuxkit /go/src/github.com/linuxkit/linuxkit
+RUN go get -u github.com/linuxkit/linuxkit/src/cmd/linuxkit
 
 RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
 
@@ -28,18 +24,21 @@ COPY --from=deps /go/bin /usr/bin
 
 
 RUN apk add --update \
+	bash \
 	docker \
 	git \
+	dnsmasq \
 	qemu-img \
 	qemu-system-x86_64 \
 	terminus-font \
 	&& rm -rf /var/cache/pkg
 
-RUN git clone https://github.com/w9n/linuxkit /pkgs/linuxkit
-RUN git clone https://github.com/linuxkit/kubernetes /pkgs/kubernetes
-RUN git clone https://github.com/w9n/desktopless /pkgs/desktopless
+#RUN git clone https://github.com/w9n/linuxkit /pkgs/linuxkit
+#RUN git clone https://github.com/linuxkit/kubernetes /pkgs/kubernetes
+#RUN git clone https://github.com/w9n/desktopless /pkgs/desktopless
 
 COPY ./init.sh /usr/bin
+COPY ./network.sh /usr/bin
 COPY ./config.yml /root/.moby/linuxkit/config.yml
 
 WORKDIR /workdir
@@ -47,4 +46,3 @@ WORKDIR /workdir
 #COPY hack/linuxkit /usr/bin/linuxkit
 
 ENTRYPOINT ["init.sh"]
-CMD ["sh"]
