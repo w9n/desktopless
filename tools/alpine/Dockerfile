@@ -56,7 +56,7 @@ RUN apk add --no-cache btrfs-progs-dev gcc libc-dev linux-headers make
 RUN cd $GOPATH/src/github.com/containerd/containerd && \
   make binaries EXTRA_FLAGS="-buildmode pie" EXTRA_LDFLAGS='-extldflags "-fno-PIC -static"' BUILD_TAGS="static_build"
 
-FROM alpine:3.7
+FROM alpine:edge
 
 COPY --from=mirror /etc/apk/repositories /etc/apk/repositories
 COPY --from=mirror /etc/apk/repositories.upstream /etc/apk/repositories.upstream

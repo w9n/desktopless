@@ -64,3 +64,4 @@ xf86-video-qxl
 xkeyboard-config 
 xorg-server
 xterm
+openssl
