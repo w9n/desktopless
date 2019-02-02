@@ -12,6 +12,17 @@ where:
     -b|--build  if set build the desktop
     -r|--run    if set run the desktop"
 
+err() {
+    echo "missing argument" >&2
+    echo "$usage" >&2
+} 
+
+echo $1
+if [[ -z "$1" ]] ; then
+    err
+    exit 0
+fi
+
 while [ "$#" -gt 0 ]; do
         case $1 in
             -b|--build)
@@ -40,12 +51,6 @@ while [ "$#" -gt 0 ]; do
                 ;;
         esac
 done
-
-err() {
-    echo "missing argument" >&2
-    echo "$usage" >&2
-    exit 1
-} 
 
 {
     [ $build == "true" ] && {
