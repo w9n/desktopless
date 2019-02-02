@@ -43,6 +43,4 @@ COPY ./config.yml /root/.moby/linuxkit/config.yml
 
 WORKDIR /workdir
 
-#COPY hack/linuxkit /usr/bin/linuxkit
-
 ENTRYPOINT ["init.sh"]
