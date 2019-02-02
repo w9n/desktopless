@@ -5,6 +5,7 @@
 : ${DOCKER_TAG:=latest}
 : ${DEV:=true}
 : ${REMOTE_VIEWER:=true}
+: ${DOCKER_SOCKET:=}
 
 : ${NETWORK_NAME:=deskopless}
 : ${NETWORK_SUBNET:=10.10.10.1/24}

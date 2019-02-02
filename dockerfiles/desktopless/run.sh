@@ -5,6 +5,7 @@ desktopless()
     : ${DOCKER_REPO_PREFIX:=wiin}
     : ${DOCKER_TAG:=latest}
     : ${DESKTOPLESS_IP:=}
+    : ${DOCKER_SOCKET:=}
     : ${DEV=}
 
     DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -28,7 +29,7 @@ desktopless()
         $IP \
         $NET \
         -v /dev:/dev \
-        -v /var/run/docker.sock:/var/run/docker.sock \
+        -v ${DOCKER_SOCKET}:/var/run/docker.sock \
         ${DOCKER_REPO_PREFIX}/desktopless:${DOCKER_TAG} \
         $@   
 }
