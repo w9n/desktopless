@@ -16,7 +16,7 @@ ip link set br0 up
 
 cat > /dnsmasq.conf <<- EOM
     bind-interfaces
-    dhcp-authoritive
+    dhcp-authoritative
     interface=$bridge_name
     listen-address=$bridge_ip
     dhcp-range=$dhcp
