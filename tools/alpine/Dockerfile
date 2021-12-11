@@ -3,8 +3,6 @@ FROM alpine:edge AS mirror
 # update base image
 RUN apk update && apk upgrade -a
 
-# Copy Dockerfile so we can include it in the hash
-COPY Dockerfile /Dockerfile
 COPY packages* /tmp/
 
 run mkdir -p /mirror/$(uname -m)
@@ -19,7 +17,7 @@ RUN apk fetch --recursive -o /mirror/$(uname -m) -X http://dl-cdn.alpinelinux.or
 RUN apk fetch --recursive -o /mirror/$(uname -m) -X http://dl-cdn.alpinelinux.org/alpine/edge/testing --no-cache $(apk info; cat /tmp/packages.testing)
 
 # install abuild for signing
-RUN apk add --no-cache abuild
+RUN apk add --no-cache sudo abuild
 
 # install a new key into /etc/apk/keys
 RUN abuild-keygen -a -i -n
@@ -38,7 +36,7 @@ RUN mv /etc/apk/repositories /etc/apk/repositories.upstream && echo "/mirror" > 
 COPY go-compile.sh /go/bin/
 RUN apk add --no-cache git go musl-dev
 ENV GOPATH=/go PATH=$PATH:/go/bin
-RUN go get -u github.com/golang/lint/golint
+RUN go get -u golang.org/x/lint
 RUN go get -u github.com/gordonklaus/ineffassign
 RUN go get -u github.com/LK4D4/vndr
 
@@ -46,7 +44,7 @@ RUN go get -u github.com/LK4D4/vndr
 # Update `FROM` in `pkg/containerd/Dockerfile`, `pkg/init/Dockerfile` and
 # `test/pkg/containerd/Dockerfile` when changing this.
 ENV CONTAINERD_REPO=https://github.com/containerd/containerd.git
-ENV CONTAINERD_COMMIT=v1.0.1-rc.0
+ENV CONTAINERD_COMMIT=v1.4.11
 RUN mkdir -p $GOPATH/src/github.com/containerd && \
   cd $GOPATH/src/github.com/containerd && \
   git clone https://github.com/containerd/containerd.git && \
@@ -54,8 +52,11 @@ RUN mkdir -p $GOPATH/src/github.com/containerd && \
   git checkout $CONTAINERD_COMMIT
 RUN apk add --no-cache btrfs-progs-dev gcc libc-dev linux-headers make
 RUN cd $GOPATH/src/github.com/containerd/containerd && \
-  make binaries EXTRA_FLAGS="-buildmode pie" EXTRA_LDFLAGS='-extldflags "-fno-PIC -static"' BUILD_TAGS="static_build"
+  GO111MODULE=off make binaries EXTRA_FLAGS="-buildmode pie" EXTRA_LDFLAGS='-extldflags "-fno-PIC -static"' BUILDTAGS="static_build no_devmapper"
 
+# Copy Dockerfile so we can include it in the hash
+COPY Dockerfile /Dockerfile
+WORKDIR /
 FROM alpine:edge
 
 COPY --from=mirror /etc/apk/repositories /etc/apk/repositories
