@@ -5,8 +5,6 @@ RUN apk add --initdb --no-cache --root /out \
 	alpine-baselayout \
     	xorg-server \
 	xf86-video-intel \
-	xf86-input-mouse \
-	xf86-input-keyboard \
 	xf86-input-libinput \
 	udev \
 	xterm \
