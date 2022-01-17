@@ -1,7 +1,28 @@
+#https://github.com/linuxkit/linuxkit/blob/master/pkg/Makefile
 DIRS = $(dir $(shell find . -maxdepth 2 -mindepth 2 -type f -name build.yml))
 .PHONY: push force-push build forcebuild show-tag clean
 
-OPTIONS ?=-org wiin -hash latest
+OPTIONS ?=
+
+PUSHOPTIONS =
+
+ifneq ($(LK_RELEASE),)
+PUSHOPTIONS += -release $(LK_RELEASE)
+endif
+
+push:
+	@linuxkit pkg push $(OPTIONS) $(PUSHOPTIONS) $(DIRS)
+
+forcepush:
+	@linuxkit pkg push $(OPTIONS) $(PUSHOPTIONS) --force $(DIRS)
 
 build:
-	@set -e; for d in $(DIRS); do linuxkit pkg build $(OPTIONS) "$$d"; done
+	@linuxkit pkg build $(OPTIONS) $(DIRS)
+
+forcebuild:
+	@linuxkit pkg build $(OPTIONS) --force $(DIRS)
+
+show-tag:
+	@linuxkit pkg show-tag $(OPTIONS) $(DIRS)
+
+clean:
