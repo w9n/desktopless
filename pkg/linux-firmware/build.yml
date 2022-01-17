@@ -1,2 +1,4 @@
 image: firmware
 org: wiin
+arches:
+  - amd64

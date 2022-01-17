@@ -1,5 +1,7 @@
 image: i3
 org: wiin
+arches:
+  - amd64
 config:
   binds:
     - /tmp:/tmp:rshared,rbind

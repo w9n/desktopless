@@ -1,5 +1,7 @@
 image: x-qxl
 org: wiin
+arches:
+  - amd64
 config:
   binds:
     - /tmp:/tmp:rshared,rbind
