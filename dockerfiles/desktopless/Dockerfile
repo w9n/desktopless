@@ -13,8 +13,10 @@ RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
 #Run apk add --update git make build-base
 
 #hack
-RUN git clone https://github.com/w9n/linuxkit /go/src/github.com/linuxkit/linuxkit
-RUN go get -u github.com/linuxkit/linuxkit/src/cmd/linuxkit
+RUN git clone https://github.com/w9n/linuxkit  linuxkit
+RUN cd ./linuxkit/src/cmd/linuxkit && \
+	go build  -o linuxkit && \
+	cp linuxkit /go/bin
 
 RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
 
