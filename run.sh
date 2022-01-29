@@ -1,7 +1,7 @@
 #!/bin/bash
 
 : ${BUILD_CONTAINER:=}
-: ${DOCKER_REPO_PREFIX:=wiin}
+: ${DOCKER_REPO_PREFIX:=desktopless}
 : ${DOCKER_TAG:=latest}
 : ${DEV:=true}
 : ${REMOTE_VIEWER:=true}

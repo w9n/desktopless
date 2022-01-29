@@ -1,5 +1,5 @@
 image: i3
-org: wiin
+org: desktopless
 arches:
   - amd64
 config:

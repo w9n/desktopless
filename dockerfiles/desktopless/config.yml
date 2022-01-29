@@ -4,6 +4,6 @@ repos:
   - path: /pkgs/kubernetes/pkg
     org: linuxkit
   - path: /workdir/pkg
-    org: wiin
+    org: desktopless
   - path: /pkgs/desktopless/pkg
-    org: wiin
+    org: desktopless

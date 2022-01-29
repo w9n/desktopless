@@ -1,4 +1,4 @@
-FROM wiin/alpine:latest as build
+FROM desktopless/alpine:latest as build
 ENTRYPOINT []
 CMD []
 WORKDIR /
@@ -16,7 +16,7 @@ RUN apk add --no-cache --initdb -p /out \
 
 RUN mv /out/etc/apk/repositories.upstream /out/etc/apk/repositories
 
-FROM wiin/alpine:latest as docker
+FROM desktopless/alpine:latest as docker
 RUN apk add --no-cache \
 	docker
 

@@ -17,4 +17,4 @@ services:
 trust:
   org:
     - linuxkit
-    - wiin
+    - desktopless

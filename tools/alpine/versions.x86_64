@@ -1,4 +1,4 @@
-# wiin/alpine:a6385bc648c4ad7053aebd956717c778adf6eb28-amd64
+# desktopless/alpine:a6385bc648c4ad7053aebd956717c778adf6eb28-amd64
 # automatically generated list of installed packages
 alpine-baselayout-3.2.0-r18
 alpine-keys-2.4-r1

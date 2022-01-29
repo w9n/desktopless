@@ -4,7 +4,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 : ${DISPLAY=":0"}
 
 remote_viewer(){
-    : ${DOCKER_REPO_PREFIX:=wiin}
+    : ${DOCKER_REPO_PREFIX:=desktopless}
     : ${DOCKER_TAG:=latest}
 
     [ ! -z "$NETWORK_NAME" ] && NET=" \

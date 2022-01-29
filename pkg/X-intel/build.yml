@@ -1,5 +1,5 @@
 image: x-intel
-org: wiin
+org: desktopless
 arches:
   - amd64
 config:

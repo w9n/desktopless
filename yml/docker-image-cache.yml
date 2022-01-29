@@ -1,6 +1,6 @@
 services:
   - name: docker-image-cache
-    image: wiin/docker-image-cache:latest
+    image: desktopless/docker-image-cache:latest
 trust:
   org:
-    - wiin
+    - desktopless

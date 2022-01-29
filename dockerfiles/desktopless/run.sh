@@ -2,7 +2,7 @@
 
 desktopless()
 {
-    : ${DOCKER_REPO_PREFIX:=wiin}
+    : ${DOCKER_REPO_PREFIX:=desktopless}
     : ${DOCKER_TAG:=latest}
     : ${DESKTOPLESS_IP:=}
     : ${DOCKER_SOCKET:=}

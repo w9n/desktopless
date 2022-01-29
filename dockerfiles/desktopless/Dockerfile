@@ -1,4 +1,4 @@
-FROM wiin/alpine:latest as deps
+FROM desktopless/alpine:a6385bc648c4ad7053aebd956717c778adf6eb28-amd64 as deps
 
 RUN apk add --no-cache  \
 	gcc \

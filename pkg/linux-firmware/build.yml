@@ -1,4 +1,4 @@
 image: firmware
-org: wiin
+org: desktopless
 arches:
   - amd64

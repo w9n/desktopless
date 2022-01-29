@@ -1,4 +1,4 @@
-FROM wiin/alpine: AS build
+FROM desktopless/alpine:latest AS build
 
 RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk add --no-cache --initdb -p /out \
