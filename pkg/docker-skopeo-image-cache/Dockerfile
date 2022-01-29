@@ -23,8 +23,8 @@ RUN apk add --no-cache \
 ENV GOPATH /go
 WORKDIR /go/src/github.com/containers/skopeo
 RUN git clone https://github.com/containers/skopeo ./
-RUN make binary-local
-RUN cp ./skopeo /usr/bin/skopeo
+RUN make bin/skopeo
+RUN cp ./bin/skopeo /usr/bin/skopeo
 
 FROM alpine:edge
 ENTRYPOINT []
