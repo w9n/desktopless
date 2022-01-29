@@ -22,7 +22,6 @@ RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
 
 #FROM frolvlad/alpine-glibc
 FROM alpine:edge
-COPY --from=deps /go/bin /usr/bin
 
 
 RUN apk add --update \
@@ -44,5 +43,7 @@ COPY ./network.sh /usr/bin
 COPY ./config.yml /root/.moby/linuxkit/config.yml
 
 WORKDIR /workdir
+
+COPY --from=deps /go/bin /usr/bin
 
 ENTRYPOINT ["init.sh"]
