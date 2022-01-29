@@ -15,6 +15,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: login
+      shell: bash
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD docker.io/desktopless
+      env:
+        DOCKER_USERNAME: "${{secrets.DOCKER_USERNAME}}"
+        DOCKER_PASSWORD: "${{secrets.DOCKER_PASSWORD}}"
     - name: Build the Docker image
       run: make
