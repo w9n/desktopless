@@ -8,7 +8,7 @@ RUN apk add --no-cache --initdb -p /out \
 # Remove apk residuals. We have a read-only rootfs, so apk is of no use.
 RUN rm -rf /out/etc/apk /out/lib/apk /out/var/cache
 
-RUN rmdir /out/var/run && ln -nfs /run /out/var/run
+RUN rm -rf /out/var/run && ln -nfs /run /out/var/run
 
 FROM scratch
 WORKDIR /
