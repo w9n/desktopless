@@ -40,6 +40,7 @@ RUN apk add --no-cache \
        libselinux \
        busybox 
 
-COPY dl /images 
+#needs todo
+#COPY dl /images
 COPY import-images.sh /usr/bin/import-images.sh
 CMD [ "import-images.sh" ]
