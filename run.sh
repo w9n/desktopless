@@ -16,7 +16,7 @@ docker network create --subnet $NETWORK_SUBNET $NETWORK_NAME
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-xhost +local:root
+#xhost +local:root
 
 [ ! -z "$BUILD_CONTAINER" ] && {
     $DIR/build.sh
