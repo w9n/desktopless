@@ -1,6 +1,6 @@
 services:
   - name: i3
-    image: desktopless/i3:latest
+    image: desktopless/i3:4875f8fbadc9eea15d27d1c06977f1acb3e21e89
 trust:
   org:
     - desktopless

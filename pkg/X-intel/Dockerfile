@@ -1,4 +1,4 @@
-FROM desktopless/alpine:latest AS mirror
+FROM desktopless/alpine:a6385bc648c4ad7053aebd956717c778adf6eb28-amd64 AS mirror
 
 RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk add --initdb --no-cache --root /out \

@@ -1,4 +1,4 @@
-FROM desktopless/alpine:latest AS build
+FROM desktopless/alpine:a6385bc648c4ad7053aebd956717c778adf6eb28-amd64 AS build
 
 RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk add --no-cache --initdb -p /out \
@@ -14,7 +14,8 @@ FROM scratch
 WORKDIR /
 COPY --from=build /out /
 COPY --from=docker:17.11.0-ce-dind /usr/local/bin/docker /usr/local/bin/docker
-COPY dl/*.tar /images/
+#todo
+#COPY dl/*.tar /images/
 COPY images.lst /images.lst
 COPY init.sh /usr/bin
 ENTRYPOINT [ "/bin/sh", "-c" ]
