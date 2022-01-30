@@ -28,3 +28,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: make
+    - name: Build images
+      run: linuxkit build  yml/kernel-lkt.yml yml/base.yml yml/X-qxl.yml
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          X-qxl-kernel
+          X-qxl-initrd.img
+          X-qxl-cmdline
