@@ -1,6 +1,6 @@
 services:
   - name: docker-skopeo-image-cache
-    image: desktopless/docker-skopeo-image-cache:latest
+    image: desktopless/docker-skopeo-image-cache:92640754d2eb8a45ebd6da4bccd44baa2c68f815
 trust:
   org:
     - desktopless

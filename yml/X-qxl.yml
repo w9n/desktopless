@@ -1,6 +1,6 @@
 services:
   - name: x-qxl
-    image: desktopless/x-qxl:latest
+    image: desktopless/x-qxl:e37a6a810fdb62db879a6d9431f5d66d2976ce2e
 trust:
   org:
     - desktopless

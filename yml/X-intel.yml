@@ -1,6 +1,6 @@
 services:
   - name: x-intel
-    image: desktopless/x-intel:latest
+    image: desktopless/x-intel:4c466a2905ab58a4472fe634ac744b39bc7b0dfb
 trust:
   org:
     - desktopless
