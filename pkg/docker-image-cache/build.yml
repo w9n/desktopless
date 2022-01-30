@@ -6,7 +6,8 @@ arches:
 config:
   binds:
     - /var/run:/var/run
-depends:
-  docker-images:
-    target-dir: dl
-    from-file: images.lst
+#todo
+#depends:
+#  docker-images:
+#    target-dir: dl
+#    from-file: images.lst

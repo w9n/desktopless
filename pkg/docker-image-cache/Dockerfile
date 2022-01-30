@@ -14,7 +14,8 @@ FROM scratch
 WORKDIR /
 COPY --from=build /out /
 COPY --from=docker:17.11.0-ce-dind /usr/local/bin/docker /usr/local/bin/docker
-COPY dl/*.tar /images/
+#todo
+#COPY dl/*.tar /images/
 COPY images.lst /images.lst
 COPY init.sh /usr/bin
 ENTRYPOINT [ "/bin/sh", "-c" ]
