@@ -1,4 +1,4 @@
-FROM desktopless/alpine:latest as build
+FROM desktopless/alpine:a6385bc648c4ad7053aebd956717c778adf6eb28-amd64 as build
 ENTRYPOINT []
 CMD []
 WORKDIR /
@@ -16,7 +16,7 @@ RUN apk add --no-cache --initdb -p /out \
 
 RUN mv /out/etc/apk/repositories.upstream /out/etc/apk/repositories
 
-FROM desktopless/alpine:latest as docker
+FROM desktopless/alpine:a6385bc648c4ad7053aebd956717c778adf6eb28-amd64 as docker
 RUN apk add --no-cache \
 	docker
 

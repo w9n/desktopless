@@ -1,6 +1,9 @@
-.PHONY: build run dockerfiles pkgs
+.PHONY: build run dockerfiles pkgs base
 
-build: dockerfiles pkgs
+build: base dockerfiles pkgs 
+
+base:
+	make -C ./tools/alpine
 
 dockerfiles:
 	make -C ./dockerfiles
