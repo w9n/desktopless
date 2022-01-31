@@ -1,4 +1,4 @@
-FROM desktopless/alpine:5861bd79a63d80cdc119194016f0c36969343388-amd64 as deps
+FROM desktopless/alpine:0987b34b7cd37a623d56c8b2e977a19974408136-amd64 as deps
 
 RUN apk add --no-cache  \
 	gcc \

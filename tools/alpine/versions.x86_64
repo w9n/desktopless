@@ -1,4 +1,4 @@
-# desktopless/alpine:5861bd79a63d80cdc119194016f0c36969343388-amd64
+# desktopless/alpine:0987b34b7cd37a623d56c8b2e977a19974408136-amd64
 # automatically generated list of installed packages
 alpine-baselayout-3.2.0-r18
 alpine-keys-2.4-r1
@@ -178,6 +178,7 @@ libltdl-2.4.6-r7
 libmd-1.0.3-r0
 libmnl-1.0.4-r2
 libmount-2.37.3-r0
+libnfs-4.0.0-r0
 libnftnl-1.2.1-r0
 libnl3-3.5.0-r0
 libogg-1.3.5-r0
@@ -209,6 +210,7 @@ libsmartcols-2.37.3-r0
 libsm-dev-1.2.3-r0
 libsndfile-1.0.31-r1
 libsoup-2.74.0-r0
+libssh-0.9.6-r1
 libssl1.1-1.1.1m-r1
 libstdc++-11.2.1_git20220117-r0
 libtasn1-4.18.0-r0
@@ -438,8 +440,37 @@ py3-urllib3-1.26.8-r0
 python2-2.7.18-r4
 python3-3.10.2-r0
 qemu-6.2.0-r2
+qemu-audio-alsa-6.2.0-r2
+qemu-audio-oss-6.2.0-r2
+qemu-audio-pa-6.2.0-r2
+qemu-audio-sdl-6.2.0-r2
+qemu-audio-spice-6.2.0-r2
+qemu-block-curl-6.2.0-r2
+qemu-block-dmg-bz2-6.2.0-r2
+qemu-block-nfs-6.2.0-r2
+qemu-block-rbd-6.2.0-r2
+qemu-block-ssh-6.2.0-r2
+qemu-chardev-spice-6.2.0-r2
+qemu-hw-display-qxl-6.2.0-r2
+qemu-hw-display-virtio-gpu-6.2.0-r2
+qemu-hw-display-virtio-gpu-gl-6.2.0-r2
+qemu-hw-display-virtio-gpu-pci-6.2.0-r2
+qemu-hw-display-virtio-gpu-pci-gl-6.2.0-r2
+qemu-hw-display-virtio-vga-6.2.0-r2
+qemu-hw-display-virtio-vga-gl-6.2.0-r2
+qemu-hw-s390x-virtio-gpu-ccw-6.2.0-r2
+qemu-hw-usb-host-6.2.0-r2
+qemu-hw-usb-redirect-6.2.0-r2
 qemu-img-6.2.0-r2
+qemu-modules-6.2.0-r2
 qemu-system-x86_64-6.2.0-r2
+qemu-ui-curses-6.2.0-r2
+qemu-ui-egl-headless-6.2.0-r2
+qemu-ui-gtk-6.2.0-r2
+qemu-ui-opengl-6.2.0-r2
+qemu-ui-sdl-6.2.0-r2
+qemu-ui-spice-app-6.2.0-r2
+qemu-ui-spice-core-6.2.0-r2
 qgpgme-1.16.0-r1
 qt5-qtbase-5.15.3_git20210713-r7
 qt5-qtbase-x11-5.15.3_git20210713-r7
@@ -448,12 +479,14 @@ qt5-qtwayland-5.15.3_git20220119-r0
 readline-8.1.1-r0
 runc-1.1.0-r0
 scanelf-1.3.3-r0
+sdl2-2.0.20-r0
 shared-mime-info-2.1-r0
 snappy-1.1.9-r3
 soxr-0.1.3-r2
 speexdsp-1.2.0-r0
 spice-glib-0.39-r2
 spice-gtk-0.39-r2
+spice-server-0.15.0-r2
 sqlite-libs-3.37.2-r0
 ssl_client-1.35.0-r1
 startup-notification-0.12-r4

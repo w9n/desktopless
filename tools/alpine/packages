@@ -45,6 +45,7 @@ polkit
 python2
 qemu-img
 qemu-system-x86_64
+qemu-modules
 startup-notification
 startup-notification-dev
 udev
