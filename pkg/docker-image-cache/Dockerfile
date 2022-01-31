@@ -1,4 +1,4 @@
-FROM desktopless/alpine:a6385bc648c4ad7053aebd956717c778adf6eb28-amd64 AS build
+FROM desktopless/alpine:5861bd79a63d80cdc119194016f0c36969343388-amd64 AS build
 
 RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk add --no-cache --initdb -p /out \

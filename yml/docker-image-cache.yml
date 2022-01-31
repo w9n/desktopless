@@ -1,6 +1,6 @@
 services:
   - name: docker-image-cache
-    image: desktopless/docker-image-cache:c8f98afb3f9995aa35d82f95656477c48aec68de
+    image: desktopless/docker-image-cache:f5c46fedafa8667ff3693f629ef4ae75b9a38697
 trust:
   org:
     - desktopless
