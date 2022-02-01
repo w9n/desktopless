@@ -1,5 +1,5 @@
 kernel:
-  image: linuxkit/kernel:4.9.61
+  image: linuxkit/kernel:5.4.172
   cmdline: "console=tty0 console=ttyS0 console=ttyAMA0"
 trust:
   org:
