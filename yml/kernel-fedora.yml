@@ -1,8 +1,9 @@
 kernel:
-  image: desktopless/kernel-fedora:4.13.9-300.fc27
+  image: wiin/kernel-fedora:4.13.9-300.fc27
   cmdline: "console=tty0 console=ttyS0 console=ttyAMA0"
 init:
-  - linuxkit/firmware:latest
+  - linuxkit/firmware-all:380bab133487f744476335c853fca6056bcc7577-arm64
 trust:
   org:
-    - desktopless
+    - wiin
+      linuxkit
