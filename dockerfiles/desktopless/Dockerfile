@@ -30,6 +30,7 @@ RUN apk add --update \
 	git \
 	dnsmasq \
 	qemu-img \
+	qemu-modules \
 	qemu-system-x86_64 \
 	terminus-font \
 	&& rm -rf /var/cache/pkg
