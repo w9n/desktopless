@@ -56,6 +56,7 @@ done
     [ $build == "true" ] && {
         echo "building $name..."
         echo $moby_configs
+        dockerd &> /docker.logs &
         linuxkit build -format iso-bios -name builds/$name $moby_configs
     }
 
