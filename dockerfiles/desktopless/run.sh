@@ -28,6 +28,7 @@ desktopless()
         $DEV_PARAM \
         $IP \
         $NET \
+        -v ~/.linuxkit:/root/.linuxkit \
         -v /dev:/dev \
         -v ${DOCKER_SOCKET}:/var/run/docker.sock \
         ${DOCKER_REPO_PREFIX}/desktopless:${DOCKER_TAG} \
