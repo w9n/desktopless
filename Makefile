@@ -11,6 +11,10 @@ dockerfiles:
 pkgs:
 	make -C ./pkg
 
+update-alpine-tag:
+	$(eval alpine := desktopless/alpine:$(shell cat tools/alpine/hash))
+	./scripts/update-component-sha.sh --image $(alpine);
+
 update-package-tags:
 ifneq ($(LK_RELEASE),)
 	$(eval tags := $(shell cd pkg; make show-tag | cut -d ':' -f1))
