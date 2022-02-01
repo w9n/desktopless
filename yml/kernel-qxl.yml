@@ -1,0 +1,6 @@
+kernel:
+  image: desktopless/kernel-qxl:5.12.14
+  cmdline: "console=tty0 console=ttyS0 console=ttyAMA0"
+trust:
+  org:
+    - desktopless
