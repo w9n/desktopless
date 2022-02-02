@@ -1,4 +1,4 @@
-# desktopless/alpine:0987b34b7cd37a623d56c8b2e977a19974408136-amd64
+# desktopless/alpine:38923914ffe1e3495020defa32b06b8cb7b47ec0-amd64
 # automatically generated list of installed packages
 alpine-baselayout-3.2.0-r18
 alpine-keys-2.4-r1
@@ -24,6 +24,7 @@ bsd-compat-headers-0.7.2-r3
 btrfs-progs-dev-5.16-r0
 btrfs-progs-libs-5.16-r0
 busybox-1.35.0-r1
+busybox-1.35.0-r2
 bzip2-dev-1.0.8-r1
 ca-certificates-20211220-r0
 ca-certificates-bundle-20211220-r0
@@ -85,7 +86,9 @@ gettext-libs-0.21-r1
 git-2.35.1-r0
 git-perl-2.35.1-r0
 glib-2.70.1-r0
+glib-2.70.3-r0
 glib-dev-2.70.1-r0
+glib-dev-2.70.3-r0
 glib-networking-2.70.0-r0
 gmp-6.2.1-r1
 gnupg-gpgconf-2.2.33-r0
@@ -150,6 +153,7 @@ libc-dev-0.7.2-r3
 libcom_err-1.46.5-r0
 libcrypto1.1-1.1.1m-r1
 libcurl-7.81.0-r0
+libcurl-7.81.0-r1
 libc-utils-0.7.2-r3
 libdrm-2.4.109-r0
 libelf-0.186-r0
@@ -489,6 +493,7 @@ spice-gtk-0.39-r2
 spice-server-0.15.0-r2
 sqlite-libs-3.37.2-r0
 ssl_client-1.35.0-r1
+ssl_client-1.35.0-r2
 startup-notification-0.12-r4
 startup-notification-dev-0.12-r4
 tdb-libs-1.4.5-r1
