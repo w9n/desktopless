@@ -3,6 +3,7 @@ FROM alpine:edge AS mirror
 RUN mkdir -p /out/etc/apk && cp -r /etc/apk/* /out/etc/apk/
 RUN apk add --initdb --no-cache --root /out \
 	alpine-baselayout \
+    apk-tools \
 	sway \
 	eudev \
 	ttf-dejavu \
