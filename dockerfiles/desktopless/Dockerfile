@@ -1,4 +1,4 @@
-FROM desktopless/alpine:0987b34b7cd37a623d56c8b2e977a19974408136-amd64 as deps
+FROM desktopless/alpine:38923914ffe1e3495020defa32b06b8cb7b47ec0-amd64 as deps
 
 RUN apk add --no-cache  \
 	gcc \
@@ -46,5 +46,7 @@ COPY ./config.yml /root/.moby/linuxkit/config.yml
 WORKDIR /workdir
 
 COPY --from=deps /go/bin /usr/bin
+
+RUN apk upgrade
 
 ENTRYPOINT ["init.sh"]
